@@ -1,0 +1,54 @@
+# Java 编译输出
+*.class
+target/
+build/
+out/
+
+# Maven
+.mvn/
+mvnw
+mvnw.cmd
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+
+# Gradle
+.gradle/
+gradle-app.setting
+gradlew
+gradlew.bat
+gradle-wrapper.jar
+gradle-wrapper.properties
+
+# IDE - IntelliJ IDEA
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# IDE - Eclipse
+.settings/
+.project
+.classpath
+.factorypath
+
+# IDE - VS Code
+.vscode/
+
+# 日志文件
+*.log
+logs/
+
+# 包文件
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# 虚拟机和系统文件
+.DS_Store
+Thumbs.db
