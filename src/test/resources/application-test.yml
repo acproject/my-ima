@@ -1,0 +1,14 @@
+# application-test.yml - Test configuration using PostgreSQL
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/my-ima
+    username: postgres
+    password: ac123456
+    driver-class-name: org.postgresql.Driver
+  jooq:
+    sql-dialect: POSTGRES
+
+logging:
+  level:
+    org.springframework: INFO
+    com.owiseman: DEBUG

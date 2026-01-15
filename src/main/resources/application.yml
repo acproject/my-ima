@@ -1,0 +1,49 @@
+# application.yml
+server:
+  port: 8086
+spring:
+  profiles:
+    default: dev
+
+---
+spring:
+  config:
+    activate:
+      on-profile: dev
+  autoconfigure:
+    exclude:
+      - org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
+      - org.springframework.boot.autoconfigure.jooq.JooqAutoConfiguration
+      - org.springframework.boot.autoconfigure.liquibase.LiquibaseAutoConfiguration
+
+---
+spring:
+  config:
+    activate:
+      on-profile: prod
+  datasource:
+    url: jdbc:postgresql://localhost:5432/my-ima
+    username: postgres
+    password: ac123456
+    driver-class-name: org.postgresql.Driver
+  jooq:
+    sql-dialect: POSTGRES
+    configuration:
+      fetchSize: 1000
+      logging: true
+      logLevel: DEBUG
+  liquibase:
+    enabled: true
+    change-log: classpath:db/migration/master.xml
+    drop-first: false
+    default-schema: public
+
+# JWT Configuration
+jwt:
+  secret: mySecretKeyForJWTTokenGenerationMustBeAtLeast256BitsLong
+  expiration: 86400000  # 24 hours in milliseconds
+
+# Application Configuration
+app:
+  name: MY-IMA
+  version: 0.0.1
